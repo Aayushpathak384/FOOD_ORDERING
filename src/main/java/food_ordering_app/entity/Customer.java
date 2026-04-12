@@ -12,13 +12,11 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+
 
     @Column(name = "name", nullable = false)
     private String name;
-
+    @Id
     @Column(name ="email" , unique = true, nullable = false)
     private String email;
 
@@ -31,6 +29,6 @@ public class Customer {
     @OneToMany(fetch = FetchType.LAZY , mappedBy = "customer")
     private List<Address> addressList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AuthProvider> authProviders;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<AuthProvider> authProviders;
 }

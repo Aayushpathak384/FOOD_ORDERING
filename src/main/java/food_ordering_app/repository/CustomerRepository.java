@@ -21,13 +21,13 @@ public class CustomerRepository {
     public List<Customer> FindAllCustomer(){
         return this.customerJPARepository.findAll();
     }
-    public Customer FindCustomerById(UUID uuid){
-        return this.customerJPARepository.findById(uuid).orElseThrow(()->new NotFoundException(Customer.class ,"uuid" , uuid));
+    public Customer FindCustomerById(String email){
+        return this.customerJPARepository.findById(email).orElseThrow(()->new NotFoundException(Customer.class ,"email" , email));
     }
     public void save_update(Customer customer){
         this.customerJPARepository.save(customer);
     }
-    public void DeleteById(UUID uuid){
-        this.customerJPARepository.deleteById(uuid);
+    public void DeleteById(String email){
+        this.customerJPARepository.deleteById(email);
     }
 }
