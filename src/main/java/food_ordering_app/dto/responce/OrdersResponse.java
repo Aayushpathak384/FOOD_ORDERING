@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class OrdersResponse {
     private UUID id;
-    private UUID customerId;
+    private String customerEmail;
     private UUID restaurantId;
     private double totalPrice;
     private OrderStatus orderStatus;

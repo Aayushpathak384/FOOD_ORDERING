@@ -26,6 +26,10 @@ public class RestaurantRepository {
         return this.restaurantJPARepository.findById(uuid).orElseThrow(() -> new NotFoundException(Restaurant.class, "uuid", uuid));
     }
 
+    public Restaurant findRestaurantByEmail(String email) {
+        return this.restaurantJPARepository.findByEmail(email).orElseThrow(() -> new NotFoundException(Restaurant.class, "email", email));
+    }
+
     public void save_update(Restaurant restaurant) {
         this.restaurantJPARepository.save(restaurant);
     }

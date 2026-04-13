@@ -1,5 +1,6 @@
 package food_ordering_app.dto.request;
 
+import food_ordering_app.entity.Address;
 import food_ordering_app.entity.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrdersRequest {
-
+    private UUID ReustrantId;
     private List<UUID> orderItemIds;
+    private Address address;
 }

@@ -34,6 +34,8 @@ public class Orders {
 
     @ManyToOne
     private Restaurant restaurant;
-
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
 }
